@@ -1,2 +1,4 @@
-initial: 
+initial:
   data: ""
+test_2:
+  foo: bla
