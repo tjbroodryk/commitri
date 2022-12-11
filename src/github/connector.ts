@@ -49,7 +49,7 @@ export class GithubConnector {
         owner,
         repo,
         path,
-        ref: `heads/${branch}`,
+        ref: `${branch}`,
       });
 
       return {
@@ -57,7 +57,7 @@ export class GithubConnector {
         sha: (data as any).sha,
       };
     } catch (e) {
-      throw new Error(`uanble to get file at: ${path}`);
+      throw new Error(`unable to get file at: ${path}`);
     }
   }
 
