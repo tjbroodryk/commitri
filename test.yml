@@ -1,3 +1,5 @@
 some:
   content: yooo
 test.foo: bla
+test:
+  foo: bla
