@@ -1,2 +1,3 @@
 some:
-  content: "yooo"
+  content: yooo
+test.foo: bla
