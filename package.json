@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@golevelup/ts-jest": "^0.3.4",
     "@types/jest": "^29.2.3",
     "@types/lodash": "^4.14.189",
     "esbuild": "^0.15.13",

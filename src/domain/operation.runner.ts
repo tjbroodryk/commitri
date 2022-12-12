@@ -2,6 +2,7 @@ import { flow } from "lodash"
 import { GithubSessionFactory } from "../github/session"
 import { Tree } from "../github/types"
 import { Operation } from "./operation.dto"
+import { TreeItem } from './tree-item.dto';
 
 export class OperationRunner {
   private readonly _operation: Operation
@@ -30,12 +31,10 @@ export class OperationRunner {
 
       const blob = await githubSession.createBlob(newData)
 
-      tree.push({
-        mode: `100644`,
-        type: `blob`,
+      tree.push(TreeItem.create({
         sha: blob.sha,
         path: change.outputPath
-      })
+      }))
     }
 
     const parentCommit = await githubSession.getCurrentCommit()
