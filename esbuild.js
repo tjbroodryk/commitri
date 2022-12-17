@@ -1,4 +1,5 @@
 const esbuild = require("esbuild");
+const { nodeExternalsPlugin } = require("esbuild-node-externals");
 
 esbuild
   .build({
@@ -10,5 +11,6 @@ esbuild
     minify: true,
     format: "cjs",
     target: ["node14"],
+    plugins: [nodeExternalsPlugin()],
   })
   .catch(() => process.exit(1));
