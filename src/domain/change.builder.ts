@@ -1,5 +1,5 @@
 import { Transform } from "../types/transform.type"
-import { Transformation } from "../types/transformation.interface"
+import { Transformation } from "../types/transformation.type"
 import { Change } from "./change.dto"
 
 export class ChangeBuilder {

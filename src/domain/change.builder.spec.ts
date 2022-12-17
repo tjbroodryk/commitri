@@ -1,6 +1,6 @@
 import { ChangeBuilder } from './change.builder';
 import { Transform } from '../types/transform.type';
-import { Transformation } from '../types/transformation.interface';
+import { Transformation } from '../types/transformation.type';
 import { flow } from 'lodash';
 
 describe(ChangeBuilder.name, () => {

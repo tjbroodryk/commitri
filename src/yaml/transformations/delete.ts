@@ -1,6 +1,6 @@
 import { unset } from "lodash";
 import * as YAML from "yaml";
-import { Transformation } from "../../types/transformation.interface";
+import { Transformation } from "../../types/transformation.type";
 import { makePath } from "../utils";
 
 export interface DeleteProps { path: string }

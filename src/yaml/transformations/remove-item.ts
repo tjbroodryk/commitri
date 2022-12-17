@@ -1,6 +1,6 @@
 import { get, set } from "lodash";
 import * as YAML from "yaml";
-import { Transformation } from "../../types/transformation.interface";
+import { Transformation } from "../../types/transformation.type";
 
 export interface RemoveItemProps { path: string, value: string }
 

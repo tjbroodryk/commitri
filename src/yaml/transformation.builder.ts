@@ -1,4 +1,4 @@
-import { Transformation } from "../types/transformation.interface";
+import { Transformation } from "../types/transformation.type";
 import { DeleteProps, DeleteValueTransform } from './transformations/delete';
 import { PushProps, PushTransform } from './transformations/push';
 import { SetProps, SetTransform } from "./transformations/set";
