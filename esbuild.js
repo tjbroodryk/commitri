@@ -7,8 +7,7 @@ esbuild
     bundle: true,
     sourcemap: true,
     minify: true,
-    splitting: true,
-    format: "esm",
+    format: "cjs",
     target: ["es2015"],
   })
   .catch(() => process.exit(1));
