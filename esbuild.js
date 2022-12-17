@@ -5,9 +5,10 @@ esbuild
     entryPoints: ["src/index.ts"],
     outdir: "lib",
     bundle: true,
+    platform: "node",
     sourcemap: true,
     minify: true,
     format: "cjs",
-    target: ["es2015"],
+    target: ["node14"],
   })
   .catch(() => process.exit(1));
