@@ -9,7 +9,8 @@
     "ts-types": " tsc --emitDeclarationOnly --outDir lib",
     "test": "jest -c jest.config.js",
     "build": "rimraf lib && node ./esbuild.js && npm run ts-types",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "pretty-quick"
   },
   "author": "",
   "license": "ISC",
