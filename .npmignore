@@ -1,0 +1,4 @@
+.husky/
+.github/
+jest.config.js
+esbuild.js
