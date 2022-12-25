@@ -1,17 +1,27 @@
 import { set } from "lodash";
 import * as YAML from "yaml";
 import { Transformation } from "../../types/transformation.type";
-import { makePath } from "../utils";
+import { makePath, getYamlStringifyOptions } from "../utils";
+import { YamlConfig } from "../config";
 
-export interface SetProps { path: string, value: unknown }
+export interface SetProps {
+  path: string;
+  value: unknown;
+}
 
 export class SetTransform implements Transformation {
-  constructor(private readonly props: SetProps) {}
+  constructor(
+    private readonly props: SetProps,
+    private readonly config: YamlConfig
+  ) {}
 
   transform(stringData: string): string {
-    const data: YAML.YAMLMap = YAML.parse(stringData)
-    const { path, value } = this.props
-    
-    return YAML.stringify(set(data, makePath(path), value));
+    const data: YAML.YAMLMap = YAML.parse(stringData);
+    const { path, value } = this.props;
+
+    return YAML.stringify(
+      set(data, makePath(path), value),
+      getYamlStringifyOptions(this.config)
+    );
   }
 }

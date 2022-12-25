@@ -14,6 +14,44 @@ Developed for an initial use case of having to change a value in a `Pulumi.prod.
 
 See the `/examples` dir.
 
+### YAML Configuration
+
+The tool allows you to configure how YAML strings are formatted when outputting changes:
+
+```typescript
+import { YamlTransformationBuilder } from "commitri";
+
+// Use single quotes for strings
+const transform = new YamlTransformationBuilder()
+  .withQuoteStyle("QUOTE_SINGLE")
+  .set({ path: "foo:bar", value: "baz" })
+  .build();
+
+// Use double quotes for strings (default)
+const transform2 = new YamlTransformationBuilder()
+  .withQuoteStyle("QUOTE_DOUBLE")
+  .set({ path: "foo:bar", value: "baz" })
+  .build();
+
+// Use no quotes when possible
+const transform3 = new YamlTransformationBuilder()
+  .withQuoteStyle("PLAIN")
+  .set({ path: "foo:bar", value: "baz" })
+  .build();
+
+// You can also use the full config object
+const transform4 = new YamlTransformationBuilder()
+  .withConfig({ defaultStringType: "QUOTE_SINGLE" })
+  .set({ path: "foo:bar", value: "baz" })
+  .build();
+```
+
+Available quote styles:
+
+- `QUOTE_SINGLE`: Use single quotes (')
+- `QUOTE_DOUBLE`: Use double quotes (") - default
+- `PLAIN`: Use no quotes when possible
+
 ## Limitations
 
 - At the moment, it is only capable of directly committing to a branch. Automatic PR creation functionality is not yet available.
